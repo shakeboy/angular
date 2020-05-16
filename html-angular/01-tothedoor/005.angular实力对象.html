@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实例对象</title>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<!--    AngularJS 模块（Module） 定义了 AngularJS 应用。
+
+AngularJS 控制器（Controller） 用于控制 AngularJS 应用。
+
+ng-app指令指明了应用, ng-controller 指明了控制器。-->
+    <div ng-app="form" ng-controller="form">
+        <label for="user">用户名：</label> <input type="text" id="user" ng-model="user"> <br>
+        <label for="pwd">密码：</label> <input type="password" id="pwd" ng-model="pwd"> <br>
+
+        {{user}} <br>{{pwd}}
+    </div>
+</body>
+<script>
+    let app = angular.module('form', []);
+    app.controller('form', function($scope) {
+        $scope.user= "John";
+        $scope.pwd= "Doe";
+    });
+</script>
+</html>

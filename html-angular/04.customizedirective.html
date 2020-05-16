@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义标签</title>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<!--    创建自定义的指令
+除了 AngularJS 内置的指令外，我们还可以创建自定义指令。
+
+你可以使用 .directive 函数来添加自定义的指令。
+
+要调用自定义指令，HTML 元素上需要添加自定义指令名。
+
+使用驼峰法来命名一个指令， runoobDirective, 但在使用它时需要以 - 分割, runoob-directive:-->
+    <div class="shakeboy"></div>
+    <shakeboy></shakeboy>
+    <div shakeboy></div>
+    <div shakeboy></div>
+
+</body>
+<script>
+    let app = angular.module("myApp",[]);
+    app.directive("shakeboy",function () {
+        return {
+            restrict:"EAMC",
+            template:"<h2>shakeboy自定义标签</h2>"
+        }
+    });
+//restrict 值可以是以下几种:
+    //限制使用
+    // E 作为元素名使用
+    // A 作为属性使用
+    // C 作为类名使用
+    // M 作为注释使用
+    // restrict 默认值为 EA, 即可以通过元素名和属性名来调用指令。
+</script>
+</html>

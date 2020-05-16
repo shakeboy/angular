@@ -1,0 +1,6 @@
+ng help
+ng generate --help
+
+ng new project-name
+ng serve
+...
